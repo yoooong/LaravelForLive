@@ -1,0 +1,281 @@
+/* $noty
+ ------------------------------------------*/
+
+li.app-noty {
+  position: relative;
+  margin-bottom: @gutter;
+  display: block;
+}
+
+li.app-noty:last-child {
+  margin-bottom: 0;
+}
+
+.noty_message[style] {
+  font-size: @font-size-base!important;
+}
+
+.app-noty .noty_bar {
+  padding: 0.5rem @padding-base;
+  .rounded(@border-radius-base);
+  border: 1px solid transparent;
+}
+
+.app-noty-top-left,
+.app-noty-top-right,
+.app-noty-bottom-left,
+.app-noty-bottom-right {
+  .app-noty .noty_bar {
+    .animation-duration(800ms);
+    .animation-timing-function(linear);
+    .animation-fill-mode(forwards);
+    .animation-name(animSlideRight);
+    .translate(0, 0);
+  }
+  .app-noty.i-am-closing-now .noty_bar {
+    .animation-duration(150ms);
+  }
+}
+
+.app-noty-bottom-right,
+.app-noty-top-right {
+  .app-noty .noty_bar {
+    .animation-name(animSlideElasticRight);
+  }
+  .app-noty.i-am-closing-now .noty_bar {
+    .animation-name(animSlideRight);
+  }
+}
+
+.app-noty-bottom-left,
+.app-noty-top-left {
+  .app-noty .noty_bar {
+    .animation-name(animSlideElasticLeft);
+  }
+  .app-noty.i-am-closing-now .noty_bar {
+    .animation-name(animSlideLeft);
+  }
+}
+
+.app-noty-bottom,
+.app-noty-top {
+  .app-noty .noty_bar {
+    -webkit-animation: fadeIn 150ms;
+    animation: fadeIn 150ms;
+  }
+  .app-noty.i-am-closing-now .noty_bar {
+    -webkit-animation: fadeOut 150ms;
+    animation: fadeOut 150ms;
+  }
+}
+
+
+.app-noty-bottom,
+.app-noty-bottom-right,
+.app-noty-bottom-left,
+.app-noty-top,
+.app-noty-top-right,
+.app-noty-top-left {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 99999;
+  .transition(opacity @transition-duration cubic-bezier(0.7, 0, 0.3, 1));
+  .opacity(1);
+  .offscreen ~ & {
+    .opacity(0);
+  }
+}
+/* Bottom notification */
+
+.app-noty-bottom {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  li.app-noty {
+    margin-bottom: 0;
+    margin-top: -0.0625rem;
+  }
+  .noty_bar {
+    .rounded(0);
+  }
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .app-noty-bottom {
+    padding-left: @sidebar-width;
+  }
+  .layout-small-menu ~ .app-noty-bottom {
+    padding-left: @sidebar-small-menu-width;
+  }
+  .layout-right-sidebar ~ .app-noty-bottom {
+    padding-left: 0;
+    padding-right: @sidebar-width;
+  }
+  .layout-right-sidebar.layout-small-menu ~ .app-noty-bottom {
+    padding-left: 0;
+    padding-right: @sidebar-small-menu-width;
+  }
+  .layout-boxed ~ .app-noty-bottom,
+  .layout-boxed.layout-right-sidebar.layout-small-menu ~ .app-noty-bottom {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* Bottom right notification */
+
+.app-noty-bottom-right {
+  bottom: (@footer-height + @gutter);
+  right: @gutter;
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .layout-right-sidebar ~ .app-noty-bottom-right {
+    right: (@sidebar-width + @gutter);
+  }
+  .layout-right-sidebar.layout-small-menu ~ .app-noty-bottom-right {
+    right: (@sidebar-small-menu-width + @gutter);
+  }
+  .layout-boxed ~ .app-noty-bottom-right,
+  .layout-boxed.layout-right-sidebar.layout-small-menu ~ .app-noty-bottom-right {
+    right: @gutter;
+  }
+}
+/* Bottom left notification */
+
+.app-noty-bottom-left {
+  bottom: (@footer-height + @gutter);
+  left: @gutter;
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .app-noty-bottom-left {
+    left: (@sidebar-width + @gutter);
+  }
+  .layout-small-menu ~ .app-noty-bottom-left {
+    left: (@sidebar-small-menu-width + @gutter);
+  }
+  .layout-right-sidebar ~ .app-noty-bottom-left {
+    left: @gutter;
+  }
+  .layout-right-sidebar.layout-small-menu ~ .app-noty-bottom-left {
+    left: @gutter;
+  }
+  .layout-boxed ~ .app-noty-bottom-left,
+  .layout-boxed.layout-small-menu ~ .app-noty-bottom-left {
+    left: @gutter;
+  }
+}
+/* Top notification */
+
+.app-noty-top {
+  top: (@header-height + @gutter);
+  right: @gutter;
+}
+
+.app-noty-top {
+  top: (@header-height);
+  right: 0;
+  width: 100%;
+  li.app-noty {
+    margin-bottom: 0;
+    margin-top: -0.0625rem;
+  }
+  .noty_bar {
+    .rounded(0);
+  }
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .app-noty-top {
+    padding-left: @sidebar-width;
+  }
+  .layout-small-menu ~ .app-noty-top {
+    position: absolute;
+    padding-left: @sidebar-small-menu-width;
+  }
+  .layout-right-sidebar ~ .app-noty-top {
+    padding-left: 0;
+    padding-right: @sidebar-width;
+  }
+  .layout-right-sidebar.layout-small-menu ~ .app-noty-top {
+    padding-left: 0;
+    padding-right: @sidebar-small-menu-width;
+  }
+  .layout-boxed ~ .app-noty-top,
+  .layout-boxed.layout-right-sidebar.layout-small-menu ~ .app-noty-top {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* Top right notification */
+
+.app-noty-top-right {
+  top: (@header-height + @gutter);
+  right: @gutter;
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .layout-right-sidebar ~ .app-noty-top-right {
+    right: (@sidebar-width + @gutter);
+  }
+  .layout-right-sidebar.layout-small-menu ~ .app-noty-top-right {
+    right: (@sidebar-small-menu-width + @gutter);
+  }
+  .layout-boxed ~ .app-noty-top-right,
+  .layout-boxed.layout-small-menu ~ .app-noty-top-right {
+    right: @gutter;
+  }
+}
+/* Top left notification */
+
+.app-noty-top-left {
+  top: (@header-height + @gutter);
+  left: @gutter;
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .app-noty-top-left {
+    left: (@sidebar-width + @gutter);
+  }
+  .layout-small-menu ~ .app-noty-top-left {
+    left: (@sidebar-small-menu-width + @gutter);
+  }
+  .layout-right-sidebar ~ .app-noty-top-left {
+    left: @gutter;
+  }
+  .layout-right-sidebar.layout-small-menu ~ .app-noty-top-left {
+    left: @gutter;
+  }
+  .layout-boxed ~ .app-noty-top-left,
+  .layout-boxed.layout-small-menu ~ .app-noty-top-left {
+    left: @gutter;
+  }
+}
+/* Notification colors */
+
+.noty_container_type_success .noty_bar {
+  .bg-variant(@brand-success);
+  color: white;
+}
+
+.noty_container_type_information .noty_bar {
+  .bg-variant(@brand-info);
+  color: white;
+}
+
+.noty_container_type_warning .noty_bar {
+  .bg-variant(@brand-warning);
+  color: white;
+}
+
+.noty_container_type_error .noty_bar {
+  .bg-variant(@brand-danger);
+  color: white;
+}
+
+.noty_container_type_confirm .noty_bar {
+  .bg-variant(@brand-primary);
+  color: white;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "blueimp-canvas-to-blob",
+  "version": "2.2.2",
+  "title": "JavaScript Canvas to Blob",
+  "description": "JavaScript Canvas to Blob is a function to convert canvas elements into Blob objects.",
+  "keywords": [
+    "javascript",
+    "canvas",
+    "blob",
+    "convert",
+    "conversion"
+  ],
+  "homepage": "https://github.com/blueimp/JavaScript-Canvas-to-Blob",
+  "author": {
+    "name": "Sebastian Tschan",
+    "url": "https://blueimp.net"
+  },
+  "maintainers": [
+    {
+      "name": "Sebastian Tschan",
+      "url": "https://blueimp.net"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blueimp/JavaScript-Canvas-to-Blob.git"
+  },
+  "bugs": "https://github.com/blueimp/JavaScript-Canvas-to-Blob/issues",
+  "license": "MIT",
+  "main": "./js/canvas-to-blob.js",
+  "devDependencies": {
+    "jshint": "2.8.0",
+    "uglify-js": "2.6.1"
+  },
+  "scripts": {
+    "test": "jshint js/canvas-to-blob.js test/test.js",
+    "build": "uglifyjs js/canvas-to-blob.js -c -m > js/canvas-to-blob.min.js",
+    "preversion": "npm test",
+    "version": "npm run build && git add -A js",
+    "postversion": "git push origin master --tags && npm publish"
+  }
+}

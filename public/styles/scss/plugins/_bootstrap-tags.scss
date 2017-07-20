@@ -1,0 +1,34 @@
+/* $bootstrap-tags
+ ------------------------------------------*/
+div.tagsinput {
+  border-color: $input-border;
+  background: white;
+  padding: 0.3125rem 0.3125rem 0;
+  width: 100%!important;
+  height: auto!important;
+  min-height: auto!important;
+}
+
+div.tagsinput span.tag {
+  border-color: $brand-primary;
+  @include rounded($border-radius-base);
+  background: $brand-primary;
+  color: white;
+  font-family: inherit;
+  padding: 0.125rem 0.3125rem;
+}
+
+div.tagsinput span.tag a {
+  color: white;
+  font-size: $font-size-base;
+}
+
+div.tagsinput input {
+  font-family: inherit;
+  color: white;
+}
+
+.not_valid {
+  background: $alert-danger-bg!important;
+  color: $alert-danger-text!important;
+}

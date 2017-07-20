@@ -1,0 +1,191 @@
+/* $scaffolding
+ ------------------------------------------*/
+::-moz-selection {
+  background: $brand-primary;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: $brand-primary;
+  color: white;
+  text-shadow: none;
+}
+html {
+  font-size: 16px;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  background: $main-panel-bg;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background: $body-bg;
+  color: $text-color;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-family: $font-family-base-webfont, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:visited, &:active, &:focus, &:hover {
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.touch {
+  li:hover, li:focus, a:hover, a:focus, {
+    background-color: transparent!important;
+  }
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: .0625rem solid rgba(0, 0, 0, .1);
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+.img-rounded {
+  @include rounded(0.125rem);
+}
+
+.img-circle {
+  @include rounded(50%);
+}
+
+ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+  line-height: 1.5;
+}
+
+ol.list-style-none,
+ul.list-style-none {
+  padding: 0;
+  list-style: none;
+}
+
+.nav {
+  padding: 0;
+}
+
+[ui-view].ng-enter {
+  -webkit-animation: fadeIn 0.4s;
+  animation: fadeIn 0.4s;
+}
+
+.page-height {
+  height: calc(100vh - #{$header-footer-height});
+}
+.page-height-o {
+  height: calc(100vh - #{$footer-height});
+}
+
+@media (max-width: $screen-xs-max) {
+  .page-height-xs {
+    height: calc(100vh - #{$header-footer-height});
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+  }
+  .fill-container {
+    position: absolute;
+    top: $header-height;
+    bottom: $footer-height;
+    left: $sidebar-width;
+    right: 0;
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  }
+  .display-columns {
+    @include square(100%);
+  }
+  .display-columns .column {
+    float: left;
+    height: 100%;
+  }
+  .display-columns .column:last-child {
+    float: none;
+    overflow: hidden;
+  }
+}
+
+.row-equal {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  .column {
+    display: table-cell;
+    vertical-align: top;
+    float: none;
+  }
+  .full-height {
+    height: 100%;
+  }
+  &.align-middle .column{
+    vertical-align: middle;
+  }
+}
+
+
+.ripple{
+  overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  animation: ripple-animation 2000ms;
+}
+
+
+@keyframes ripple-animation {
+  from {
+    @include scale(1,1);
+    @include opacity(.4);
+  }
+  to {
+    @include scale(100,100);
+    @include opacity(0);
+  }
+}
+
+@-webkit-keyframes ripple-animation {
+  from {
+    @include scale(1,1);
+    @include opacity(.4);
+  }
+  to {
+    @include scale(100,100);
+    @include opacity(0);
+  }
+}
+

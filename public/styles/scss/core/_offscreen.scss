@@ -1,0 +1,76 @@
+/* $offscreen-menu
+ ------------------------------------------*/
+
+@media (max-width: $screen-xs-max) {
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  .main-panel {
+    position: relative;
+    min-height: 100%;
+  }
+  .main-panel,
+  .sidebar-panel .brand {
+    width: 100%;
+  }
+  .sidebar-panel .brand { 
+    float: none;
+  }
+  .main-panel,
+  .sidebar-panel {
+    -webkit-transition: -webkit-transform $transition-duration cubic-bezier(.7,0,.3,1);
+    -moz-transition: -moz-transform $transition-duration cubic-bezier(.7,0,.3,1);
+    -o-transition: -o-transform $transition-duration cubic-bezier(.7,0,.3,1);
+    transition: transform $transition-duration cubic-bezier(.7,0,.3,1);
+  }
+  .offscreen {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparentize(black, 0.7);
+      z-index: 9999;
+    }
+    footer.content-footer {
+      display: none;
+    }
+  }
+  .sidebar-panel {
+    z-index: 9999;
+    @include translate(-100%, 0);
+    @include translate3d(-100%, 0, 0);
+    &.offscreen-right {
+      @include translate(100%, 0);
+      @include translate3d(100%, 0, 0);
+    }
+  }
+  .layout-right-sidebar .sidebar-panel {
+    @include translate(100%, 0);
+    @include translate3d(100%, 0, 0);
+  }
+  .offscreen .sidebar-panel {
+    @include translate(0, 0);
+    @include translate3d(0, 0, 0);
+  }
+  .app .offscreen-left,
+  .app .offscreen-right {
+    width: $sidebar-width-sm;
+  }
+  .app .offscreen-right,
+  .app.layout-right-sidebar .sidebar-panel {
+    right: 0;
+  }
+  .move-right .sidebar-panel > nav {
+    @include translate(0, 0);
+    @include translate3d(0, 0, 0);
+  }
+  .no-csstransforms .move-right .main-panel {
+    right: $sidebar-width-sm;
+  }
+  .no-csstransforms .move-left .main-panel {
+    left: $sidebar-width-sm;
+  }
+}

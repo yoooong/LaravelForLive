@@ -1,0 +1,266 @@
+/* $calendar
+ ------------------------------------------*/
+.fc-header-btn {
+  display: block;
+  width: 100%;
+  line-height: 26px;
+}
+.fc-t-events {
+  outline: none;
+}
+.fc-widget-header {
+  border-width: 0!important;
+}
+
+.calendar-viewer {
+  background: white;
+  //padding: $gutter;
+}
+
+.fullcalendar {
+  th.fc-widget-header {
+    border-width: 0;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+  }
+  .fc td {
+    font-weight: $font-weight-bold;
+  }
+  .fc td,
+  .fc th {
+    border-right: 0;
+    border-left: 0;
+  }
+  .fc-body {
+    border: 0.0625rem solid $border-color;
+  }
+  .fc-day-grid-event .fc-time {
+    font-weight: inherit;
+    &::after {
+      display: inline-block;
+      content: ':';
+    }
+  }
+  .fc-widget-content {
+    border-color: $border-color;
+  }
+  .fc-unthemed th,
+  .fc-unthemed td,
+  .fc-unthemed hr,
+  .fc-unthemed thead,
+  .fc-unthemed tbody,
+  .fc-unthemed .fc-row,
+  .fc-unthemed .fc-popover {
+    border-color: $border-color;
+  }
+  .fc-unthemed hr,
+  .fc-unthemed .fc-popover .fc-header {
+    background-color: $border-color;
+  }
+  .fc button {
+    padding: 0 $padding-base;
+    font-size: inherit;
+  }
+  .fc-prev-button,
+  .fc-next-button {
+    padding: 0 5px;
+  }
+  .fc-state-default.fc-corner-left {
+    /* non-theme */
+    border-top-left-radius: $border-radius-base;
+    border-bottom-left-radius: $border-radius-base;
+  }
+  .fc-state-default.fc-corner-right {
+    /* non-theme */
+    border-top-right-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+  }
+  .fc-state-default {
+    background: transparent;
+    border-color: #D8D8D8;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    color: $text-color;
+    text-shadow: none;
+    @include box-shadow(none);
+  }
+  .fc-state-hover,
+  .fc-state-down,
+  .fc-state-active,
+  .fc-state-disabled {
+    color: darken($text-color, 5%);
+    background-color: $border-color;
+    outline: none;
+  }
+  .fc-state-hover {
+    color: darken($text-color, 5%);
+  }
+  .fc-state-down,
+  .fc-state-active {
+    background-color: $border-color;
+    background-image: none;
+    @include box-shadow(none);
+  }
+  .fc-toolbar {
+    background-color: $brand-default;
+    margin-bottom: 0;
+  }
+  .fc-button {
+    line-height: 1;
+    padding: 0 $gutter;
+    height: 2.5rem;
+    text-transform: capitalize;
+  }
+  .fc-toolbar h2 {
+    font-size: 1rem;
+    line-height: 2.5rem;
+    padding: 0 $gutter;
+    height: 2.5rem;
+  }
+  .fc-left,
+  .fc-right,
+  .fc-center {
+    > .fc-button,
+    h2 {
+      border-right: 0.0625rem solid darken($brand-default, 10%);
+    }
+  }
+}
+.fc-view-container {
+    padding: $gutter;
+}
+.fc .fc-toolbar>*>* {
+    margin-left: 0;
+}
+.fc-event {
+  background-color: $brand-dark;
+  color: white;
+  @include rounded(0);
+  padding: 2px 5px;
+  border-color: transparent;
+  font-size: 12px;
+}
+
+.external-event {
+  padding: 4px;
+  border-color: transparent;
+  font-size: $font-size-base;
+  display: block;
+  margin: 0 0 0.0625rem 0;
+  .remove {
+    cursor: pointer;
+  }
+}
+
+.external-events {
+  list-style: none;
+  padding: 0;
+}
+
+.external-events .form-control {
+  padding-left: 0;
+}
+
+.external-events,
+.fc-event-container {
+  .event-primary {
+    .form-control {
+      color: darken($brand-primary, 20%);
+    }
+    &.fc-event {
+      background-color: $brand-primary;
+      color: darken($brand-primary, 20%);
+    }
+  }
+  .event-success {
+    .form-control {
+      color: darken($brand-success, 20%)
+    }
+    &.fc-event {
+      background-color: lighten($brand-success, 20%);
+      color: darken($brand-success, 20%);
+    }
+  }
+  .event-info {
+    .form-control {
+      color: darken($brand-info, 20%)
+    }
+    &.fc-event {
+      background-color: lighten($brand-info, 20%);
+      color: darken($brand-info, 20%);
+    }
+  }
+  .event-warning {
+    .form-control {
+      color: darken($brand-warning, 20%)
+    }
+    &.fc-event {
+      background-color: lighten($brand-warning, 20%);
+      color: darken($brand-warning, 20%);
+    }
+  }
+  .event-danger {
+    .form-control {
+      color: darken($brand-danger, 20%)
+    }
+    &.fc-event {
+      background-color: lighten($brand-danger, 20%);
+      color: darken($brand-danger, 20%);
+    }
+  }
+  .event-default {
+    .form-control {
+      color: darken($brand-default, 20%)
+    }
+    &.fc-event {
+      background-color: lighten($brand-default, 2%);
+      color: $text-color;
+    }
+  }
+}
+
+.event-type {
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    a::before {
+      display: block;
+      @include square(100%);
+      background-color: $brand-primary;
+      content: '';
+    }
+    a:hover,
+    a:focus,
+    a.active {
+      border-color: $brand-primary;
+    }
+    a {
+      position: relative;
+      display: block;
+      padding: 1px;
+      @include square(15px);
+      border: 0.0625rem solid transparent;
+    }
+    a.event-primary::before {
+      background-color: $brand-primary;
+    }
+    a.event-success::before {
+      background-color: $brand-success;
+    }
+    a.event-info::before {
+      background-color: $brand-info;
+    }
+    a.event-warning::before {
+      background-color: $brand-warning;
+    }
+    a.event-danger::before {
+      background-color: $brand-danger;
+    }
+    a.event-default::before {
+      background-color: $brand-default;
+    }
+  }
+}

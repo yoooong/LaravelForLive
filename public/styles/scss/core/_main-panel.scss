@@ -1,0 +1,80 @@
+/* $main-panel
+ ------------------------------------------*/
+//$hoffset: ($header-height + $footer-height);
+
+.main-panel {
+  @include clearfix();
+  background: $main-panel-bg;
+  min-height: 100%;
+  //margin: 0 auto $footer-height;
+  @include clearfix();
+  &::after {
+    content: '';
+    height: $footer-height;
+  }
+  > .main-content {
+    @include clearfix();
+    padding: $gutter;
+  }
+
+  .page-title {
+    background-color: lighten($main-panel-bg, 3%);
+    border-bottom: 0.0625rem solid $border-color;
+    padding: 0.3125rem $gutter;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
+    margin-top: -$gutter;
+    margin-bottom: $gutter;
+    .title {
+      font-size: 1.125rem;
+    }
+    .breadcrumb {
+      margin: 0;
+      padding: 0;
+    }
+    .btn {
+      margin-top: ((3rem - 1.875rem) / 2);
+      margin-bottom: ((3rem - 1.875rem) / 2);
+    }
+  }
+}
+
+.center-wrapper {
+  display: table;
+  @include square(100%);
+  position: relative;
+  .center-content {
+    display: table-cell;
+    vertical-align: middle;
+    @include square(100%);
+    float: none;
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .main-panel {
+    margin-left: $sidebar-width;
+  }
+}
+
+
+.row {
+  margin-right: ($gutter / -2);
+  margin-left: ($gutter / -2);
+}
+
+@mixin grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+  }
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+}
+
+@include grid-columns();

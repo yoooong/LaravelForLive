@@ -1,0 +1,29 @@
+/* $typography
+ ------------------------------------------*/
+
+.climacon {
+  line-height: 1;
+}
+.light {
+  font-weight: 300;
+}
+small,
+.small {
+  font-size: 0.6875rem;
+}
+
+.pullquote {
+  display: block;
+  float: left;
+  width: 55%;
+  font-style: italic;
+  font-size: 1.6rem;
+  &::before {
+    float: left;
+    color: #E2E4E9;
+    content: "“";
+    font-style: normal;
+    font-size: 2.5rem;
+    font-family: Georgia, serif;
+  }
+}

@@ -1,0 +1,26 @@
+/* $portlets
+ ------------------------------------------*/
+
+.draggable-portlets-wrapper {
+  .draggable-portlets {
+    min-height: 3.125rem;
+    .portlet {
+      @include rounded(0);
+      @include transition(opacity $transition-duration linear);
+      .portlet-heading {
+        cursor: pointer;
+        @include rounded(0);
+      }
+    }
+    .ui-sortable-placeholder {
+      visibility: visible!important;
+      border: 0.0625rem dashed $border-color;
+      background: transparentize(black, 0.99);
+    }
+  }
+  &.dragging {
+    .portlet {
+      @include opacity(0.8);
+    }
+  }
+}

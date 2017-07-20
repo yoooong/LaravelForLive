@@ -1,0 +1,237 @@
+.post-header {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin-top: -146px;
+  > * {
+    display: table-cell;
+    vertical-align: bottom;
+    float: none;
+    height: 100%;
+  }
+}
+
+/* $profile
+ ------------------------------------------*/
+.profile-header {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin-top: -23%;
+  > * {
+    display: table-cell;
+    vertical-align: bottom;
+    float: none;
+    height: 100%;
+  }
+}
+
+.profile-avatar {
+  //margin: -200px 0 0 0;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  padding: 5px;
+  background-color: #fff;
+  @include box-shadow(0 0.125rem 0.25rem rgba(50, 70, 75, 0.2));
+}
+
+@media (max-width: $screen-xs-max) {
+  .profile-avatar {
+    //margin: -90px 0 0 0;
+  }
+}
+
+.profile-stats {
+  width: 40%;
+  float: right;
+}
+.profile-user {
+  width: 60%;
+}
+
+.profile-sidebar-item {
+  @include clearfix();
+  margin: 0 0 $gutter 0;
+  p {
+    margin: 0;
+  }
+}
+
+.profile-sidebar-item.profile-info {
+  text-align: center;
+}
+
+.profile-reccomendations .user-meta {
+  padding: 0;
+  list-style: none;
+  li {
+    padding: 5px 0;
+  }
+}
+
+.profile-numbers-count {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: table;
+  width: 100%;
+  li {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    float: none;
+    border-right: 0.0625rem solid $border-color;
+    font-size: 12px;
+    &:Last-child {
+      border-right: 0;
+    }
+    span {
+      font-size: 25px;
+      display: block;
+      color: darken(#fff, 70%);
+    }
+  }
+}
+
+
+
+  .profile-timeline-header {
+    @include clearfix();
+    margin-bottom: 5px;
+    .profile-timeline-user {
+      position: relative;
+      float: left;
+      margin-right: 0.9rem;
+      display: block;
+      img {
+        max-width: 48px;
+      }
+    }
+    .profile-timeline-user-details {
+      margin-top: 5px;
+      margin-left: 63px;
+    }
+  }
+  .profile-timeline-content {
+    margin-left: 63px;
+  }
+  .profile-timeline-controls a {
+    display: inline-block;
+  }
+  .profile-timeline-images {
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: 10px;
+    .image-link {
+      display: block;
+      width: 50%;
+      float: left;
+      padding-right: 2px;
+      padding-left: 2px;
+    }
+    .image-link-smaller {
+      display: block;
+      width: 25%;
+      float: left;
+      padding-right: 2px;
+      padding-left: 2px;
+      padding-bottom: 4px;
+    }
+  }
+  .profile-timeline-audio {
+    padding: $padding-base 0;
+    margin-bottom: 10px;
+    .audio {
+      display: table;
+      width: 100%;
+      .play_pause, .audio-timeline, .time {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        float: none;
+      }
+      .play_pause {
+        width: 40px;
+      }
+      .progress {
+        height: 5px;
+        width: 100%;
+        float: left;
+        margin: 0;
+        @include rounded(0);
+        .done {
+          float: left;
+          width: 34%;
+          height: 5px;
+          text-align: center;
+          background-color: $brand-primary;
+          @include transition(width .6s ease);
+        }
+      }
+      .time {
+        width: 80px;
+      }
+    }
+  }
+  .post-comments {
+    margin: 20px 0 0 0;
+    .media {
+      margin: 0;
+    }
+  }
+  .post-comments .comment {
+    overflow: hidden;
+  }
+  .post-comments .comment-author {
+    a {
+      color: darken(#fff, 80%);
+    }
+    .time {
+      font-weight: $font-weight-bold;
+      font-size: 11px;
+      color: lighten($text-color, 25%);
+    }
+  }
+
+// Comments
+.post-comments {
+  .avatar {
+    max-width: 48px;
+  }
+  .comment {
+    overflow: hidden;
+  }
+  .comment-meta {
+    float: right;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
+.composer {
+    //background-color: lighten($brand-default, 3%);
+    //border: 0.0625rem solid $brand-default;
+    //.rounded($border-radius-base);
+    //padding: $padding-base $padding-base 0;
+    .card-block {
+    padding-bottom: 0;
+  }
+  textarea {
+    @include rounded(2px);
+  }
+    .composer-options {
+      @include clearfix();
+      padding: 5px;
+      .btn {
+        border-color: transparent;
+        background-color: transparent;
+      }
+    }
+  }

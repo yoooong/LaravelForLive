@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>开始使用layer</title>
+</head>
+<body>
+
+
+<!--你必须先引入jQuery1.8或以上版本-->
+<!--<script src="/vendor/jquery/dist/jquery.js"></script>-->
+<!--<script src="js/layer/layer.js"></script>-->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <!--{{ message }}-->
+    <span v-bind:title = 'message'>
+        鼠标悬停
+    </span>
+</div>
+<script>
+ var app = new Vue({
+     el:'#app',
+     data:{
+         message: '页面加载于'+new Data()
+     }
+ })
+
+
+
+</script>
+</body>
+</html>

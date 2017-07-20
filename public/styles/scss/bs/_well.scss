@@ -1,0 +1,17 @@
+/* $well
+ ------------------------------------------*/
+
+.well {
+  border-color: darken($brand-default, 2%);
+  background-color: #E9E9ED;
+  @include box-shadow(none);
+  @include rounded($border-radius-base);
+}
+
+.well-lg {
+  @include rounded($border-radius-large);
+}
+
+.well-sm {
+  @include rounded($border-radius-small);
+}

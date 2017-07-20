@@ -1,0 +1,133 @@
+// Sidebar skin generator
+.sidebar-variant(@background;
+@color;
+@hover-active-color;
+@brand-background;
+@brand-color;
+@accordion-color;
+@accordion-active
+) {
+  .sidebar-panel {
+    background-color: @background;
+    > .brand {
+      background-color: @brand-background;
+      a {
+        color: @brand-color;
+        &:active, &:focus, &:hover {
+          color: lighten(@brand-color, 5%);
+        }
+      }
+      .hamburger-icon span {
+        background-color: @brand-color;
+      }
+      .hamburger-icon:hover span {
+        background-color: @hover-active-color;
+      }
+    }
+    .quick-launch-apps a {
+      color: @color;
+      &:visited, &:active, &:focus, &:hover {
+        color: @hover-active-color;
+      }
+    }
+    > nav {
+      li.menu-accordion > a::before {
+        .box-shadow(0 0 0 1px @accordion-color);
+      }
+      li.open.menu-accordion > a::before {
+        background: @accordion-active;
+        .box-shadow(0 0 0 1px @accordion-active);
+      }
+      > ul > li > ul {
+        background-color: darken(@background, 0%)
+      }
+      > ul > li > a:hover,
+      > ul > li.open > a,
+      > ul > li.open > a:hover,
+      > ul > li.open > a:focus {
+        background-color: darken(@background, 0%);
+      }
+      li.open > a,
+      li.active > a {
+        color: @hover-active-color;
+      }
+      .open > a,
+      .open > a:hover,
+      .open > a:focus {
+        background-color: transparent;
+      }
+      a {
+        color: @color;
+        &:active, &:focus, &:hover {
+          color: @hover-active-color!important;
+        }
+      }
+      .heading {
+        color: darken(@color, 10%);
+      }
+    }
+  }
+  .quick-launch-panel {
+    background: @background;
+    .close {
+      background: darken(@background, 10%);
+      color: @color;
+    }
+    a {
+      color: @color;
+      &:hover {
+        color: @hover-active-color;
+      }
+    }
+  }
+  @media screen and (min-width: @screen-sm-min) {
+    .small-menu .sidebar-panel > nav li.open {
+      background-color: darken(@background, 2%);
+    }
+    .small-menu .sidebar-panel nav > ul > li > .sub-menu {
+      background-color: darken(@background, 2%)
+    }
+  }
+}
+
+// Header skin generator
+.header-variant(@background;
+@hover-active-background;
+@color;
+@hover-active-color) {
+  .main-panel > .header {
+    background-color: @background;
+    .navbar-text {
+      color: @color;
+    }
+    .nav > li > a {
+      color: @color;
+    }
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+      background-color: @hover-active-background;
+      color: @hover-active-color;
+    }
+    .nav .open > a,
+    .nav .open > a:hover,
+    .nav .open > a:focus {
+      background-color: @hover-active-background;
+      color: @hover-active-color;
+    }
+    .hamburger-icon {
+      span {
+        background: @color;
+      }
+      &:hover span {
+        background: @hover-active-color;
+      }
+    }
+  }
+  @media (max-width: @screen-xs-max) {
+    .header .brand {
+      .brand-logo {
+        color: @color;
+      }
+    }
+  }
+}

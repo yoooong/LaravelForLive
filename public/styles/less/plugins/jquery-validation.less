@@ -1,0 +1,27 @@
+/* $jquery-validation
+ ------------------------------------------*/
+.parsley-validation(@text-color: #555;@border-color: #ccc;@background-color: #f5f5f5) {
+  border-color: @border-color;
+  .box-shadow(none);
+  &:focus {
+    border-color: darken(@border-color, 10%);
+    .box-shadow(none);
+  }
+}
+
+input.valid {
+  .parsley-validation(@brand-success;
+  @brand-success;
+  @brand-success);
+}
+
+input.error {
+  .parsley-validation(@brand-danger;
+  @brand-danger;
+  @brand-danger);
+}
+
+label.error {
+  color: @brand-danger;
+  font-weight: @font-weight-base;
+}

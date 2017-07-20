@@ -1,0 +1,127 @@
+/* $social-button
+ ------------------------------------------*/
+
+$bs-height-base: 2.125rem;
+$bs-height-lg: 2.875rem;
+$bs-height-sm: 1.75rem;
+$bs-height-xs: 1.375rem;
+@mixin btn-icon() {
+  position: relative;
+  overflow: hidden;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: ($bs-height-base + $padding-base-horizontal);
+  border-width: 0;
+  text-overflow: ellipsis;
+  :first-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $bs-height-base;
+    text-align: center;
+    line-height: $bs-height-base;
+    background: rgba(0, 0, 0, 0.1);
+    border-right: 0.0625rem solid rgba(0, 0, 0, 0.03);
+  }
+  &.btn-lg {
+    :first-child {
+      width: $bs-height-lg;
+      line-height: $bs-height-lg;
+    }
+  }
+  &.btn-sm {
+    :first-child {
+      width: $bs-height-sm;
+      line-height: $bs-height-sm;
+    }
+  }
+  &.btn-xs {
+    :first-child {
+      width: $bs-height-xs;
+      line-height: $bs-height-xs;
+    }
+  }
+}
+
+.btn-icon {
+  @include btn-icon;
+}
+
+.btn-lg.btn-icon,
+.btn-group-lg > .btn.btn-icon {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  padding-left: ($bs-height-lg + $padding-large-horizontal);
+}
+
+.btn-sm.btn-icon,
+.btn-group-sm > .btn.btn-icon {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  padding-left: ($bs-height-sm + $padding-small-horizontal);
+}
+
+.btn-xs.btn-icon,
+.btn-group-xs > .btn.btn-icon {
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
+  padding-left: ($bs-height-xs + $padding-small-horizontal);
+}
+
+.btn-icon-icon {
+  padding: 0;
+  width: $bs-height-base;
+  height: $bs-height-base;
+  border-width: 1px;
+  @include btn-icon;
+  padding-left: 0;
+  :first-child {
+    width: 100%!important;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+  }
+  &.btn-lg {
+    padding-right: 0;
+    padding-left: 0;
+    @include square($bs-height-lg);
+  }
+  &.btn-sm {
+    padding-right: 0;
+    padding-left: 0;
+    @include square($bs-height-sm);
+  }
+  &.btn-xs {
+    padding-right: 0;
+    padding-left: 0;
+    @include square($bs-height-xs);
+  }
+}
+
+@mixin btn-social($color-bg, $color: #fff) {
+  background-color: $color-bg;
+  @include button-variant($color, $color-bg, $color-bg);
+}
+
+.btn-adn           { @include btn-social(#d87a68); }
+.btn-bitbucket     { @include btn-social(#205081); }
+.btn-dropbox       { @include btn-social(#1087dd); }
+.btn-facebook      { @include btn-social(#3b5998); }
+.btn-flickr        { @include btn-social(#ff0084); }
+.btn-foursquare    { @include btn-social(#f94877); }
+.btn-github        { @include btn-social(#444444); }
+.btn-google        { @include btn-social(#dd4b39); }
+.btn-instagram     { @include btn-social(#3f729b); }
+.btn-linkedin      { @include btn-social(#007bb6); }
+.btn-microsoft     { @include btn-social(#2672ec); }
+.btn-odnoklassniki { @include btn-social(#f4731c); }
+.btn-openid        { @include btn-social(#f7931e); }
+.btn-pinterest     { @include btn-social(#cb2027); }
+.btn-reddit        { @include btn-social(#eff7ff, #000); }
+.btn-soundcloud    { @include btn-social(#ff5500); }
+.btn-tumblr        { @include btn-social(#2c4762); }
+.btn-twitter       { @include btn-social(#55acee); }
+.btn-vimeo         { @include btn-social(#1ab7ea); }
+.btn-vk            { @include btn-social(#587ea3); }
+.btn-yahoo         { @include btn-social(#720e9e); }

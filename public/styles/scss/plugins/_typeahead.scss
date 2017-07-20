@@ -1,0 +1,42 @@
+ /*
+ * twitter typeahead
+ *
+ */
+.twitter-typeahead {
+  display: block;
+  width: 100%;
+}
+.tt-query {
+  @include box-shadow(inset 0 0.0625rem 1px rgba(0, 0, 0, 0.075));
+}
+
+.tt-menu {
+  width: 100%;
+  margin: -0.0625rem 0 $gutter;
+  padding: $gutter 0;
+  background-color: #fff;
+  border: 0.0625rem solid $brand-primary;
+  @include box-shadow(none);
+  @include rounded($border-radius-base);
+}
+
+.tt-suggestion {
+  padding: 0.1875rem $gutter;
+  line-height: 1.5rem;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: $brand-primary;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: $brand-primary;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}

@@ -1,0 +1,36 @@
+@font-face {
+	font-family: 'card-icon';
+	src:url('../fonts/card/card-icon.eot?4xewen');
+	src:url('../fonts/card/card-icon.eot?4xewen#iefix') format('embedded-opentype'),
+		url('../fonts/card/card-icon.ttf?4xewen') format('truetype'),
+		url('../fonts/card/card-icon.woff?4xewen') format('woff'),
+		url('../fonts/card/card-icon.svg?4xewen#card-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="card-icon-"], [class*=" card-icon-"] {
+	font-family: 'card-icon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.card-icon-remove:before {
+	content: "\e070";
+}
+.card-icon-collapse:before {
+	content: "\e10f";
+}
+.card-icon-reload:before {
+	content: "\e211";
+}
+
+

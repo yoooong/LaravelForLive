@@ -1,0 +1,21 @@
+/* $accordion
+ ------------------------------------------*/
+
+.accordion {
+  .panel {
+    border: 0.0625rem solid lighten($border-color, 5%);
+    @include rounded($border-radius-large);
+  }
+  .panel-heading {
+    background-color: white!important;
+    @include rounded($border-radius-large);
+    a {
+      color: $text-color;
+      position: relative;
+      display: block;
+    }
+  }
+  .panel-body {
+    border-top: 0!important;
+  }
+}

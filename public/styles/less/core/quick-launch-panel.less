@@ -1,0 +1,47 @@
+  /* $quick-launch
+  ------------------------------------------*/
+
+.quick-launch-panel {
+  display: none;
+  visibility: hidden;
+  &.open {
+    display: block;
+    visibility: visible;
+  }
+}
+.quick-launch-panel.open + nav {
+  display: none;
+  visibility: hidden;
+}
+.quick-launch-apps {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  a span.app-icon {
+    .rounded(0.125rem);
+    .square(4.5rem);
+    display: block;
+    font-size: 3rem;
+    font-family: @font-family-heading-webfont;
+    i {
+      display: block;
+      font-size: 1.5rem;
+    }
+  }
+  a span.app-title {
+    display: block;
+    font-size: 0.6875rem;
+    padding-top: 0;
+    margin-top: .5rem;
+  }
+}

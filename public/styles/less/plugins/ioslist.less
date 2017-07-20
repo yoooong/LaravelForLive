@@ -1,0 +1,35 @@
+/* $ioslist
+ ------------------------------------------*/
+.ioslist-group-header {
+  width: 100%;
+}
+.ioslist-group-header, .ioslist-fake-header {
+  text-shadow: none;
+  -moz-text-shadow: none;
+  -webkit-text-shadow: none;
+  padding: 0.25rem @gutter;
+  background-color: lighten(@brand-default, 5%);
+  font: inherit;
+  color: @text-color;
+  width: 100%;
+  border-top: 0;
+  border-bottom-color:  @border-color;
+  text-transform: capitalize;
+}
+.ioslist li {
+  font: inherit;
+  display: table;
+  width: 100%;
+  padding: 0.5rem @gutter;
+  cursor: pointer;
+  .clearfix();
+  white-space: nowrap;
+  &.active {
+    background-color: @brand-primary;
+    color: white;
+  }
+}
+
+.ioslist li + li {
+  border-top-color: @border-color;
+}

@@ -1,0 +1,358 @@
+/* $inout-select
+ ------------------------------------------*/
+.input {
+  display: block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+}
+
+.input__field {
+  position: relative;
+  display: block;
+  float: right;
+  border: none;
+  .rounded(@border-radius-base);
+  -webkit-appearance: none;
+  background: transparent;
+  width: 100%;
+  height: 40px;
+  padding: 6px 12px 6px 0;
+  font-weight: @font-weight-base;
+  font-size: @font-size-base;
+  line-height: 1.42857143;
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+.input__field[disabled] {
+  z-index: 1;
+}
+
+.input__label {
+  display: inline-block;
+  font-weight: @font-weight-base;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  .user-select(none);
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  color: @text-color;
+  padding: 0 12px 0 0;
+  height: 100%;
+  pointer-events: none;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: @input-border;
+    bottom: 0;
+    left: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: @input-border-focus;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+  }
+}
+
+.input__label-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  font-size: @font-size-base;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: translate3d(0, 15px, 0);
+  transform: translate3d(0, 15px, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input__field:focus + .input__label .input__label-content,
+.input--filled .input__label-content,
+.input--focused .input__label-content {
+  color: @input-border-focus;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+}
+
+.input__field:focus + .input__label::after,
+.input--filled .input__label::after,
+.input--focused .input__label::after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+.input__field[disabled] + .input__label,
+.input__field[readonly] + .input__label {
+  background-color: #eee;
+  .input__label-content {
+    color: @text-color;
+  }
+  &:after, &:before {
+    background: @border-color;
+  }
+  .input__label-content {
+    -webkit-transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+    transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 1);
+  }
+}
+
+
+.input--success .input__label::before {
+  background: @brand-success;
+}
+.input--success .input__label::after {
+  background: @brand-success;
+}
+.input--success .input__field:focus + .input__label .input__label-content,
+.input--success .input--filled .input__label-content,
+.input--success .input--focused .input__label-content {
+  color: @brand-success;
+}
+.input--warning .input__label::before {
+  background: @brand-warning;
+}
+.input--warning .input__label::after {
+  background: @brand-warning;
+}
+.input--warning .input__field:focus + .input__label .input__label-content,
+.input--warning .input--filled .input__label-content,
+.input--warning .input--focused .input__label-content {
+  color: @brand-warning;
+}
+.input--error .input__label::before {
+  background: @brand-danger;
+}
+.input--error .input__label::after {
+  background: @brand-danger;
+}
+.input--error .input__field:focus + .input__label .input__label-content,
+.input--error .input--filled .input__label-content,
+.input--error .input--focused .input__label-content {
+  color: @brand-danger;
+}
+
+
+
+
+
+
+
+
+/* Default custom select styles */
+div.cs-select {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
+  background: #fff;
+  z-index: 100;
+  //width: auto;
+  min-width: 150px;
+  max-width: 500px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+div.cs-select > span::after,
+div.cs-select.cs-active > span::after {
+  content: '';
+
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 5px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+
+div.cs-select.cs-active > span::after {
+  -webkit-transform: translate3d(0,-50%,0);
+  transform: translate3d(0,-50%,0);
+}
+
+div.cs-select:focus {
+  outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+.cs-select select {
+  display: none;
+}
+
+.cs-select span {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 0.4375rem 0.6875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cs-select > span {
+  background-color: white;
+  border: 1px solid @border-color;
+  -webkit-transition: text-indent 0.3s, opacity 0.3s;
+  transition: text-indent 0.3s, opacity 0.3s;
+  z-index: 10;
+  padding-right: 3em;
+}
+
+.cs-select > span::after,
+.cs-select .cs-selected span::after {
+  speak: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cs-select > span::after {
+  content: '\25BE';
+  right: 1em;
+}
+
+.cs-select .cs-selected span::after {
+  content: '\e080';
+  font-family: 'Simple-Line-Icons';
+  margin-left: 1em;
+}
+
+.cs-select.cs-active > span::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+div.cs-active {
+  z-index: 9999;
+}
+
+/* Options */
+.cs-select .cs-options {
+  position: absolute;
+  visibility: hidden;
+  background: #fff;
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  margin-left: -50%;
+  margin-top: -50%;
+  //-webkit-transform: translate3d(-50%,-50%,0);
+  //transform: translate3d(-50%,-50%,0);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 100;
+  border: 1px solid @border-color;
+  .transition(height 150ms);
+  li {
+    opacity: 0;
+    -webkit-transform: translate3d(30%,0,0);
+    transform: translate3d(30%,0,0);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  li span {
+    padding: 0.5em 1em;
+    display: inline-block;
+    width: 100%
+  }
+  li span:hover,
+  li.cs-focus span,
+  li.cs-selected span {
+    color: @brand-primary;
+    background: transparent;
+  }
+}
+
+.cs-select ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  span {
+    font-family: @font-family-base-webfont;
+    padding: 1em;
+  }
+  li.cs-focus span {
+    background-color: #ddd;
+  }
+  /* Optgroup and optgroup label */
+  li.cs-optgroup ul {
+    padding-left: 1em;
+  }
+  li.cs-optgroup > span {
+    cursor: default;
+  }
+}
+
+.cs-select.cs-active .cs-options {
+  visibility: visible;
+  height: 400%;
+  li {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+  li:first-child {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+  }
+  li:nth-child(2) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+  li:nth-child(3) {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+  }
+  li:nth-child(4) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  li:nth-child(5) {
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+  }
+  span[class^="icon-"]::before,
+  span[class*=" icon-"]::before {
+    margin-right: 1rem;
+    font-family: 'Simple-Line-Icons';
+  }
+}
+div.cs-select-disabled span{
+  cursor: not-allowed;
+}
+div.cs-select-disabled > span,
+div.cs-select-disabled.cs-active .cs-options {
+  background: @border-color;
+}

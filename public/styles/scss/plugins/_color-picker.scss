@@ -1,0 +1,11 @@
+/* $color-picker
+ ------------------------------------------*/
+
+.colorpicker {
+  padding: 0.3125rem;
+  display: none;
+  @include opacity(1);
+  visibility: visible;
+  @include box-shadow(0 0.0625rem 1px transparentize($border-color, 0.7));
+  min-width: initial!important;
+}

@@ -1,0 +1,144 @@
+/* $avatar
+ ------------------------------------------*/
+
+.avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.img-thumbnail {
+  border-color: @border-color;
+}
+
+/* sizes */
+.avatar-xlg {
+  width: 32rem;
+}
+
+.avatar-xlg {
+  width: 16rem;
+}
+
+.avatar-lg {
+  width: 8rem;
+}
+
+.avatar-md {
+  width: 4rem;
+}
+
+.avatar-sm {
+  width: 3rem;
+}
+
+.avatar-xs {
+  width: 2.125rem;
+}
+
+.avatar-xxs {
+  width: 1.375rem;
+}
+
+
+/*
+ * Image $Captions
+ *
+ */
+
+figure {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: @padding-base;
+  img {
+    width: 100%;
+  }
+}
+
+figcaption {
+  position: absolute;
+  background: @brand-dark;
+  background: fade(@brand-dark, 75%);
+  color: white;
+  padding: @padding-base @padding-base-horizontal;
+  .opacity(0);
+  .transition(all 0.6s ease);
+}
+
+figure:hover figcaption {
+  .opacity(1);
+}
+
+figure:before {
+  content: "?";
+  position: absolute;
+  background: @brand-white;
+  background: fade(@brand-white, 75%);
+  color: @text-color;
+  .square(1.5rem);
+  .rounded(50%);
+  text-align: center;
+  line-height: 1.5rem;
+  .transition(all 0.6s ease);
+  .opacity(.8);
+}
+
+figure:hover:before {
+  .opacity(0);
+}
+
+.cap-left:before {
+  bottom: @padding-base;
+  left: @padding-base;
+}
+
+.cap-left figcaption {
+  bottom: 0;
+  left: -30%;
+}
+
+.cap-left:hover figcaption {
+  left: 0;
+}
+
+.cap-right:before {
+  bottom: @padding-base;
+  right: @padding-base;
+}
+
+.cap-right figcaption {
+  bottom: 0;
+  right: -30%;
+}
+
+.cap-right:hover figcaption {
+  right: 0;
+}
+
+.cap-top:before {
+  top: @padding-base;
+  left: @padding-base;
+}
+
+.cap-top figcaption {
+  left: 0;
+  top: -30%;
+}
+
+.cap-top:hover figcaption {
+  top: 0;
+}
+
+.cap-bot:before {
+  bottom: @padding-base;
+  left: @padding-base;
+}
+
+.cap-bot figcaption {
+  left: 0;
+  bottom: -30%;
+}
+
+.cap-bot:hover figcaption {
+  bottom: 0;
+}

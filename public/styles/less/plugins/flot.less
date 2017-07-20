@@ -1,0 +1,35 @@
+/* $flot-chart
+ ------------------------------------------*/
+
+#tooltip {
+  position: absolute;
+  display: none;
+  padding: 0.3125rem 0.625rem;
+  border: 0;
+  background-color: @brand-primary;
+  color: white;
+  line-height: 1;
+  &:before {
+    position: absolute;
+    top: 0.25rem;
+    right: 100%;
+    display: block;
+    .square(0);
+    border-width: 0.375rem;
+    border-style: solid;
+    border-color: transparent @brand-primary transparent transparent;
+    content: '';
+  }
+}
+
+td.legendColorBox > div {
+  border: 0!important;
+  padding: 0!important;
+}
+td.legendColorBox > div > div {
+  .rounded(0.25rem);
+}
+td.legendLabel {
+  padding-left: 0.3125rem;
+}
+

@@ -1,0 +1,411 @@
+/* $widget
+ ------------------------------------------*/
+ .card-img-overlay + .card-block {
+  position: relative;
+  z-index: 100;
+ }
+ .card-circle-icon {
+    display: inline-block;
+    vertical-align: middle;
+    @include square(2.5rem);
+    border-radius: 1.25rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2.5rem;
+  }
+  .card-circle-icon.pull-left {
+    margin-right: $padding-base;
+  }
+  .card-circle-icon.pull-right {
+    margin-left: $padding-base;
+  }
+  .card-circle-bg-icon {
+    position: absolute;
+    right: $gutter;
+    top: $gutter;
+    line-height: 5rem;
+    font-size: 3.75rem;
+    i {
+      @include opacity(.2);
+      @include rotate(-5deg);
+    }
+  }
+
+
+.card {
+  position: relative;
+  margin-bottom: $gutter;
+  border: .0625rem solid $border-color;
+  @include rounded($border-radius-base);
+}
+
+.card-block {
+  padding: $padding-base;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: .75rem;
+}
+
+.card-subtitle {
+  margin-top: -.375rem;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+
+.card-link + .card-link {
+  margin-left: 1.25rem;
+}
+
+.card > .list-group:first-child .list-group-item:first-child {
+  border-radius: .25rem .25rem 0 0;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+  border-radius: 0 0 .25rem .25rem;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  background-color: #f5f5f5;
+  border-bottom: .0625rem solid $border-color;
+  @include clearfix();
+}
+
+.card-header:first-child {
+  border-radius: $border-radius-base $border-radius-base 0 0;
+}
+
+.card-footer {
+  padding: .75rem 1.25rem;
+  background-color: #f5f5f5;
+  border-top: .0625rem solid $border-color;
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 .1875rem .1875rem;
+}
+
+.card-primary {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+}
+
+.card-success {
+  background-color: $brand-success;
+  border-color: $brand-success;
+}
+
+.card-info {
+  background-color: $brand-info;
+  border-color: $brand-info;
+}
+
+.card-warning {
+  background-color: $brand-warning;
+  border-color: $brand-warning;
+}
+
+.card-danger {
+  background-color: $brand-danger;
+  border-color: $brand-danger;
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer {
+  border-bottom: .075rem solid rgba(255, 255, 255, .2);
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer,
+.card-inverse .card-title,
+.card-inverse .card-blockquote {
+  color: #fff;
+}
+
+.card-inverse .card-link,
+.card-inverse .card-text,
+.card-inverse .card-blockquote > footer {
+  color: rgba(255, 255, 255, .65);
+}
+
+.card-inverse .card-link:focus,
+.card-inverse .card-link:hover {
+  color: #fff;
+}
+
+.card-blockquote {
+  padding: 0;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+.card-img {
+  border-radius: $border-radius-base;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+
+.card-img-top {
+  border-radius: $border-radius-base $border-radius-base 0 0;
+}
+
+.card-img-bottom {
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+}
+
+.card-deck {
+  display: table;
+  table-layout: fixed;
+  border-spacing: 1.25rem 0;
+}
+
+.card-deck .card {
+  display: table-cell;
+  width: 1%;
+  vertical-align: top;
+}
+
+.card-deck-wrapper {
+  margin-right: -1.25rem;
+  margin-left: -1.25rem;
+}
+
+.card-group {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.card-group .card {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.card-group .card + .card {
+  margin-left: 0;
+  border-left: 0;
+}
+
+.card-group .card:first-child .card-img-top {
+  border-top-right-radius: 0;
+}
+
+.card-group .card:first-child .card-img-bottom {
+  border-bottom-right-radius: 0;
+}
+
+.card-group .card:last-child .card-img-top {
+  border-top-left-radius: 0;
+}
+
+.card-group .card:last-child .card-img-bottom {
+  border-bottom-left-radius: 0;
+}
+
+.card-group .card:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.card-group .card:not(:first-child):not(:last-child) .card-img-top,
+.card-group .card:not(:first-child):not(:last-child) .card-img-bottom {
+  border-radius: 0;
+}
+
+.card-columns {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+          &.four {
+            -webkit-column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
+          }
+}
+
+.card-columns .card {
+  display: inline-block;
+  width: 100%;
+}
+
+
+
+.card-controls {
+  float: right;
+  line-height: 1;
+  a {
+    margin-left: 0.625rem;
+    display: inline-block;
+    font-size: 1rem;
+  }
+}
+
+.card-collapsed {
+  > .card-block {
+    display: none;
+  }
+}
+
+.card-refreshing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparentize(white, 0.4);
+  z-index: 1;
+}
+
+.card-refreshing::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  width: 20px;
+  height: 20px;
+  background-color: $brand-primary;
+  -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+  animation: sk-rotatePlane 1.2s infinite ease-in-out;
+  z-index: 9;
+}
+
+
+.card-todo {
+  padding: 0;
+}
+.card-todo .todo-title {
+  margin: 0 $padding-base;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  border-bottom: 0.0625rem solid transparentize(black, 0.95);
+}
+.card-todo .todo-body {
+  padding: $padding-base;
+  > ul {
+    margin-bottom: 0;
+  }
+}
+.card-todo .todo-footer {
+  background-color: transparentize(black, 0.95);
+  padding: 0.625rem $padding-base;
+  border-bottom-right-radius: $border-radius-small;
+  border-bottom-left-radius: $border-radius-small;
+}
+
+
+.notifications {
+  min-width: 18.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  .notification-icon {
+    //display: inline-block;
+    width: 1.875rem;
+  }
+  .notification-message {
+    //display: inline;
+    padding-left: 0.625rem;
+  }
+  .notifications-header, .notifications-footer {
+    padding: 0 $padding-base;
+  }
+  .notifications-header {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 0.0625rem solid $border-color;
+    p {
+      margin: 0;
+    }
+  }
+  .notifications-footer {
+    padding-top: 50.3125rem;
+    padding-bottom: 0.3125rem;
+    border-bottom-left-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+  }
+  li a {
+    font-size: $font-size-base;
+    padding: 0;
+    display: table;
+    @include square(100%);
+    //border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    overflow: hidden;
+        line-height: 1.563rem;
+  }
+  .notification-icon,
+  .notification-message,
+  .time {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    float: none;
+    height: 100%;
+  }
+  .time {
+    //display: block;
+    font-size: 0.75rem;
+    //float: right;
+    color: lighten($text-color, 5%);
+    width: 1.5rem
+  }
+  .avatar {
+    width: 1.5rem;
+  }
+  a:hover,
+  a:active {
+    color: darken($text-color, 5%);
+    background-color: transparent;
+  }
+  .notifications-list {
+    list-style: none;
+    padding: 0;
+    li {
+      border-bottom: 0.0625rem solid #f1f1f1;
+    }
+    li a {
+      position: relative;
+      //display: block;
+      padding: $padding-base;
+    }
+  }
+}
+.circle-icon {
+  position: relative;
+  display: table;
+  margin: 0;
+  float: left;
+  text-align: center;
+  line-height: 1.875rem;
+  @include square(1.875rem);
+  @include rounded(50%);
+  > i {
+    display: table-cell;
+    float: none;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    font-size: .75rem
+  }
+}

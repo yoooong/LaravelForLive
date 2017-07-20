@@ -1,0 +1,11 @@
+/* $code
+ ------------------------------------------*/
+
+pre {
+  -webkit-overflow-scrolling: touch;
+  padding: 0.625em;
+  border-color: $border-color;
+  color: $code-color;
+  white-space: nowrap;
+  @include rounded($border-radius-base);
+}

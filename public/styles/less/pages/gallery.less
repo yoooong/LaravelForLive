@@ -1,0 +1,19 @@
+/* $gallery
+ ------------------------------------------*/
+
+.gallery {
+  a {
+    display: block;
+    overflow: hidden;
+    margin-bottom: @gutter;
+    .rounded(@border-radius-base);
+    img {
+      .transition(transform @transition-duration linear);
+      max-width: 100%;
+      height: auto;
+    }
+    &:hover img {
+      .scale(1.2, 1.2);
+    }
+  }
+}

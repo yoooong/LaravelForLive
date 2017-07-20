@@ -1,0 +1,65 @@
+/* $brand
+ ------------------------------------------*/
+
+.brand {
+  position: relative;
+  height: $header-height;
+  @include clearfix();
+  .brand-logo {
+    @include vertical-align($header-height, .9rem);
+    display: inline-block;
+    padding: 0 1.563rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .toggle-sidebar {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 1.563rem;
+    padding-left: 1.563rem;
+    float: right;
+    @include vertical-align-padding($header-height, 1rem);
+  }
+  .toggle-apps {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 1.563rem;
+    padding-left: 1.563rem;
+    float: right;
+    @include vertical-align-padding($header-height, 1.25rem);
+  }
+}
+@media (max-width: $screen-xs-max) {
+  .brand {
+    float: left;
+  }
+  .brand .toggle-apps {
+    width: 100%;
+    text-align: center;
+  }
+  .brand {
+    .brand-logo {
+      display: block;
+      float: left;
+      padding-left: 0;
+    }
+  }
+  .brand .toggle-offscreen {
+    left: 0;
+    float: left;
+    @include vertical-align($header-height, 2.625rem);
+    margin-right: 0.9375rem;
+    margin-left: 0.5rem;
+  }
+  .brand .toggle-chat {
+    position: absolute;
+    top: 0;
+    border: 0.0625rem solid transparent;
+    @include vertical-align($header-height, 2.5rem);
+    @include rounded(0);
+  }
+  .header .brand .toggle-chat {
+    right: 0;
+  }
+}

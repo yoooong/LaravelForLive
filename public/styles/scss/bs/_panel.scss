@@ -1,0 +1,60 @@
+/* $panel
+ ------------------------------------------*/
+
+.panel {
+  @include rounded($border-radius-base);
+  position: relative;
+  margin-bottom: $gutter;
+  &.panel-bordered {
+    border-width: 1px;
+    .panel-heading {
+      @include rounded(0);
+    }
+  }
+}
+
+.panel-heading {
+  @include clearfix();
+  position: relative;
+  border-color: transparent;
+  border-top-right-radius: $border-radius-base;
+  border-top-left-radius: $border-radius-base;
+  text-transform: uppercase;
+}
+
+.panel-group .panel-heading+.panel-collapse>.panel-body {
+  border-color: $panel-inner-border;
+}
+
+.panel-footer {
+  border-color: $panel-inner-border;
+  background-color: $panel-footer-bg;
+}
+
+.panel-default {
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+
+.panel-primary {
+  @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+}
+
+.panel-success {
+  @include panel-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
+}
+
+.panel-warning {
+  @include panel-variant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
+}
+
+.panel-danger {
+  @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+}
+
+.panel-info {
+  @include panel-variant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
+}
+
+.accordion-toggle {
+  font-size: $font-size-base;
+}

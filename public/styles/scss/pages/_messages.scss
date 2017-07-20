@@ -1,0 +1,160 @@
+/* $messages
+ ------------------------------------------*/
+.message-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  .message-list-item {
+    a {
+      padding: $padding-base;
+      display: block;
+      cursor: pointer;
+      &:hover, &:focus, &:active {
+        background-color: lighten($brand-default, 8%);
+        color: $text-color;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      .message-list-item-header {
+        display: block;
+        margin-bottom: 2px;
+        span {
+          color: darken(#fff, 80%);
+        }
+      }
+      .time {
+        color: darken(#fff, 30%);
+        float: right;
+        font-size: 10px;
+        font-weight: $font-weight-bold;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.message-view,
+.contact-view {
+  background-color: white;
+}
+.message-header,
+.contact-header {
+  @include clearfix();
+  .lead {
+    margin-bottom: 5px;
+  }
+  .date {
+    padding-top: 8px;
+    color: darken(#fff, 30%);
+    float: right;
+    font-size: 11px;
+  }
+  .message-toolbar,
+  .contact-toolbar {
+    display: block;
+    background: transparentize(black, 0.95);
+    padding: 0 $gutter;
+    @include clearfix();
+    background: lighten($brand-default, 5%);
+    position: relative;
+    &::after {
+      content: '';
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin-left: -15px;
+      margin-right: -15px;
+      background-color: $border-color;
+    }
+    p {
+      padding: 8px 0;
+    }
+    a {
+      color: lighten($text-color, 10%);
+      padding: 10px 0;
+      display: inline-block;
+      &:hover {
+        color: $text-color
+      }
+    }
+  }
+}
+
+.message-files {
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.05);
+  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.05);
+  padding: $padding-base 0;
+  margin-top: $padding-base;
+  .btn {
+    min-height: 37px;
+  }
+}
+
+.no-messages,
+.no-contacts {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  .no-title {
+    display: table-cell;
+    vertical-align: middle;
+    h1 {
+      font-family: helvetica neue;
+      font-weight: 300;
+    }
+  }
+}
+
+.contacts-list  {
+  position: relative;
+}
+@media screen and (min-width: $screen-sm-min) {
+  .messages-sidebar,
+  .contacts-sidebar {
+    width: 250px;
+  }
+  .messages-list,
+  .contacts-list {
+    width: 300px;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .message-view,
+  .contact-view {
+    position: fixed;
+    top: $header-height;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-chat;
+    background-color: transparentize(white, 0.01);
+    overflow: hidden;
+    -webkit-transition: -webkit-transform $transition-duration cubic-bezier(.7,0,.3,1);
+    -moz-transition: -moz-transform $transition-duration cubic-bezier(.7,0,.3,1);
+    -o-transition: -o-transform $transition-duration cubic-bezier(.7,0,.3,1);
+    transition: transform $transition-duration cubic-bezier(.7,0,.3,1);
+    @include translate(100%, 0);
+    @include translate3d(100%, 0, 0);
+    .scroll {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+    }
+  }
+  .message-open .message-view,
+  .contact-open .contact-view {
+    @include translate(0, 0);
+    @include translate3d(0, 0, 0);
+  }
+
+  .contacts-list {
+    min-height: calc(100vh - #{$header-footer-height});
+    #list1 {
+      position: absolute;
+    }
+  }
+}

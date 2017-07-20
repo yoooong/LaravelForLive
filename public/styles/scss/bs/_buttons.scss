@@ -1,0 +1,113 @@
+/* $buttons
+ ------------------------------------------*/
+
+.btn {
+  position: relative;
+  padding-right: $padding-base;
+  padding-left: $padding-base;
+  outline: 0;
+  font-size: $font-size-base;
+  @include rounded($border-radius-base);
+  @include transition(all $transition-duration linear);
+  line-height: 1.3rem;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  &:focus, &:active, &.active, &:active:focus, &.active:focus {
+    outline: 0;
+  }
+}
+
+.btn:active,
+.btn.active,
+.btn-group.open .dropdown-toggle {
+  @include box-shadow(none);
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 0.6875rem 1rem;
+  font-size: 1.125rem;
+  line-height: 1.25;
+  @include rounded($border-radius-large);
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  @include rounded($border-radius-base);
+}
+
+.btn-xs,
+.btn-group-xs > .btn {
+  padding: 0.0625rem 0.3125rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Rounded button styles */
+.btn-round,
+.btn-round a,
+.btn-round .btn,
+.input-round {
+  @include rounded(2.5rem);
+  &::before {
+    @include rounded(2.5rem);
+  }
+}
+
+/* Default Button Style */
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  &.btn-outline {
+    color: $btn-default-color;
+  }
+}
+
+/* Primary Button Style */
+.btn-primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+/* Warning Button Style */
+.btn-warning {
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+
+/* Success Button Style */
+.btn-success {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+
+/* Info Button Style */
+.btn-info {
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+
+/* Danger Button Style */
+.btn-danger {
+  @include button-variant($brand-white, $brand-danger, $brand-danger);
+}
+
+/* Dark Button Style */
+.btn-dark {
+  @include button-variant($brand-white, $brand-dark, $brand-dark);
+}
+
+.btn-shadow {
+  box-shadow: rgba(0, 0, 0, 0.137255) 0 0.125rem 0.125rem 0, rgba(0, 0, 0, 0.2) 0 0.1875rem 0.0625rem -0.125rem, rgba(0, 0, 0, 0.117647) 0 0.0625rem 0.3125rem 0;
+}
+
+.close {
+  font-weight: $font-weight-base;
+}
+
+.btn.text-left {
+  text-align: left;
+}
+
+.btn.text-right {
+  text-align: right;
+}

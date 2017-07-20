@@ -1,0 +1,21 @@
+/* $textAngular
+ ------------------------------------------*/
+ .ta-root {
+  border: 0.0625rem solid $border-color;
+ }
+ .ta-toolbar.btn-toolbar {
+  background-color: #f5f5f5;
+  margin-left: 0;
+  padding-bottom: 0.3125rem;
+  > .btn, > .btn-group, > .input-group {
+    margin-top: 0.3125rem;
+  }
+ }
+ .ta-editor.ta-html, .ta-scroll-window.form-control {
+  width: 100%;
+  outline: 0;
+ }
+ .ta-scroll-window > .ta-bind {
+  background-color: white;
+  outline: 0;
+}

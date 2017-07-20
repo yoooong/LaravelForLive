@@ -1,0 +1,150 @@
+/* $travel
+ ------------------------------------------*/
+.travel-map.column,
+.travel-content.column {
+  width: 50%;
+}
+@media (max-width: @screen-xs-max) {
+  .travel-map.column,
+  .travel-content.column {
+    width: 100%;
+    display: block;
+    height: 100%;
+    .world-map {
+      display: block;
+    }
+  }
+}
+
+.tile-container {
+  position: relative;
+  width: 100%;
+  margin-left: (@gutter / -2);
+  margin-right: (@gutter / -2);
+}
+.tile-small,
+.tile-big {
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+  float: left;
+  &:hover .card {
+    background-color: #eee;
+  }
+}
+.tile-small {
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 4px;
+}
+.tile-big {
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 4px;
+}
+@media (max-width: @screen-xs-max) {
+  .tile-small {
+    width: 100%;
+  }
+  .tile-big {
+    width: 100%;
+  }
+}
+@media (min-width: @screen-sm-min) {
+  .tile-small {
+    width: 50%;
+  }
+  .tile-big {
+    width: 50%;
+  }
+}
+@media (min-width: @screen-md-min) {
+  .tile-small {
+    width: 25%;
+  }
+  .tile-big {
+    width: 50%;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .tile-small {
+    width: 25%;
+  }
+  .tile-big {
+    width: 50%;
+  }
+}
+.travel-reviews {
+  padding: 0;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: -0.9375rem;
+  margin-bottom: -0.9375rem;
+  list-style: none;
+  .travel-reviews-icon {
+    width: 60px;
+    img {
+      width: 100%;
+    }
+  }
+  .travel-reviews-content {
+    padding-left: 10px;
+  }
+  .travel-reviews-header, .travel-reviews-footer {
+    padding: 0 @padding-base;
+  }
+  .travel-reviews-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @border-color;
+    p {
+      margin: 0;
+    }
+  }
+  .travel-reviews-footer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: @border-radius-base;
+    border-bottom-right-radius: @border-radius-base;
+  }
+  li a {
+    font-size: @font-size-base;
+    padding: 0;
+    display: table;
+    .square(100%);
+    //border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    overflow: hidden;
+        line-height: 25px;
+  }
+  .travel-reviews-icon,
+  .travel-reviews-content,
+  .travel-reviews-place {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    float: none;
+    height: 100%;
+  }
+  .travel-reviews-place {
+    color: lighten(@text-color, 5%);
+    width: 100px
+  }
+  a:hover,
+  a:active {
+    color: darken(@text-color, 5%);
+    background-color: transparent;
+  }
+  .travel-reviews-list {
+    list-style: none;
+    padding: 0;
+    li {
+      border-bottom: 1px solid #f1f1f1;
+    }
+    li a {
+      position: relative;
+      //display: block;
+      padding: @padding-base;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+/* $colors
+ ------------------------------------------*/
+
+.shades(@name;@bg;) {
+  .bg-@{name} {
+    .bg-variant(@bg);
+  }
+  .bg-@{name}-dark {
+    .bg-variant(darken(@bg, 5%));
+  }
+  .bg-@{name}-darker {
+    .bg-variant(darken(@bg, 10%));
+  }
+  .bg-@{name}-light {
+    .bg-variant(lighten(@bg, 5%));
+  }
+  .bg-@{name}-lighter {
+    .bg-variant(lighten(@bg, 10%));
+  }
+}
+
+/* Color Variant: Primary */
+.shades(primary,@brand-primary);
+
+/* Color Variant: Default */
+.shades(default,@brand-default);
+
+/* Color Variant: Warning */
+.shades(warning,@brand-warning);
+
+/* Color Variant: Success */
+.shades(success,@brand-success);
+
+/* Color Variant: Info */
+.shades(info,@brand-info);
+
+/* Color Variant: Danger */
+.shades(danger,@brand-danger);
+
+/* Color Variant: White */
+.shades(white,white);
+
+/* Color Variant: Dark */
+.shades(dark,@brand-dark);
+
+/* Extra palette colors */
+.shades(red,#F44336);
+.shades(pink,#E91E63);
+.shades(purple,#9C27B0);
+.shades(deeppurple,#673AB7);
+.shades(indigo,#3F51B5);
+.shades(blue,#2196F3);
+.shades(lightblue,#03A9F4);
+.shades(cyan,#00BCD4);
+.shades(teal,#009688);
+.shades(green,#4CAF50);
+.shades(lightgreen,#74D108);
+.shades(lime,#CDDC39);
+.shades(yellow,#FFEB3B);
+.shades(amber,#FFC107);
+.shades(orange,#FF9800);
+.shades(deeporange,#FF5722);
+.shades(brown,#795548);
+.shades(grey,#9E9E9E);
+.shades(bluegrey,#607D8B);
+
+/* $TextColor */
+.text-primary {
+  .text-emphasis-variant(@brand-primary);
+}
+
+.text-default {
+  .text-emphasis-variant(@brand-default);
+}
+
+.text-warning {
+  .text-emphasis-variant(@brand-warning);
+}
+
+.text-success {
+  .text-emphasis-variant(@brand-success);
+}
+
+.text-info {
+  .text-emphasis-variant(@brand-info);
+}
+
+.text-white {
+  .text-emphasis-variant(@brand-white);
+}
+
+.text-danger {
+  .text-emphasis-variant(@brand-danger);
+}
+
+.text-muted {
+  .text-emphasis-variant(darken(#fff, 30%));
+}
+
+.text-color {
+  .text-emphasis-variant(@text-color);
+}
+
+/* Extra text colors */
+.text-red {
+  .text-emphasis-variant(#F44336);
+}
+
+.text-pink {
+  .text-emphasis-variant(#E91E63);
+}
+
+.text-purple {
+  .text-emphasis-variant(#9C27B0);
+}
+
+.text-deeppurple {
+  .text-emphasis-variant(#673AB7);
+}
+
+.text-indigo {
+  .text-emphasis-variant(#3F51B5);
+}
+
+.text-blue {
+  .text-emphasis-variant(#2196F3);
+}
+
+.text-lightblue {
+  .text-emphasis-variant(#03A9F4);
+}
+
+.text-cyan {
+  .text-emphasis-variant(#00BCD4);
+}
+
+.text-teal {
+  .text-emphasis-variant(#009688);
+}
+
+.text-green {
+  .text-emphasis-variant(#4CAF50);
+}
+
+.text-lightgreen {
+  .text-emphasis-variant(#74D108);
+}
+
+.text-lime {
+  .text-emphasis-variant(#CDDC39);
+}
+
+.text-yellow {
+  .text-emphasis-variant(#FFEB3B);
+}
+
+.text-amber {
+  .text-emphasis-variant(#FFC107);
+}
+
+.text-orange {
+  .text-emphasis-variant(#FF9800);
+}
+
+.text-deeporange {
+  .text-emphasis-variant(#FF5722);
+}
+
+.text-brown {
+  .text-emphasis-variant(#795548);
+}
+
+.text-grey {
+  .text-emphasis-variant(#9E9E9E);
+}
+
+.text-bluegrey {
+  .text-emphasis-variant(#607D8B);
+}

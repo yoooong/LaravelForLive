@@ -1,0 +1,23 @@
+/* $bootstrap.ui
+ ------------------------------------------*/
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+.ui-datepicker {
+  table {
+    background-color: white;
+    padding: $padding-base;
+    border: 0.0625em solid $border-color;
+    outline: none;
+    .btn {
+      border-color: transparent;
+      &.active {
+        @include box-shadow(none);
+      }
+    }
+  }
+  .dropdown-menu table {
+    border: 0;
+  }
+}

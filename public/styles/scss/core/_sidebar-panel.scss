@@ -1,0 +1,270 @@
+/* $sidebar-panel
+ ------------------------------------------*/
+.sidebar-panel {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include box-shadow(0 0 0 0.0625rem rgba(0,0,0,.075), 0 0.0625rem 0.125rem rgba(0,0,0,.25));
+  .small-menu-visible {
+    display: none!important;
+    visibility: hidden;
+  }
+  > nav {
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+    ul > li > a {
+      display: block;
+      text-align: left;
+      line-height: 1;
+      @include transition(background $transition-duration, color $transition-duration);
+      > span {
+        display: inline-block;
+      }
+      [class^="icon-"],
+      [class*=" icon-"] {
+        padding-right: 0.9375rem;
+        width: 1.875rem;
+        text-align: center;
+      }
+    }
+    .heading {
+        position: relative;
+        padding: 0.8125rem 1.563rem;
+    }
+    .badge {
+      @include rounded(0.8125rem);
+      padding: 0.125rem 0.625rem;
+      background-color: transparent;
+      color: inherit;
+      border: 0.0625rem solid $border-color;
+      margin-top: -0.125rem;
+    }
+    li {
+      ul li a {
+        padding: 0.625rem 1.563rem 0.625rem 3.588rem;
+      }
+    }
+    li.menu-accordion > a::before {
+      content: '';
+      position: relative;
+      display: inline-block;
+      float: right;
+      margin-left: 0.3125rem;
+      margin-top: 0.25rem;
+      @include square(0.375rem);
+      @include rounded(50%);
+    }
+    > ul > li {
+      position: relative;
+      display: block;
+      > a:focus {
+        background-color: transparent;
+      }
+      a {
+        position: relative;
+        padding: 0.8125rem 1.563rem;
+      }
+      > ul {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        max-height: 0;
+        overflow: hidden;
+        display: block;
+        width: auto;
+        > li {
+          @include opacity(0);
+          @include translate(30%, 0);
+          @include translate3d(30%,0,0);
+          @include transition(transform 150ms, opacity 150ms);
+        }
+      }
+      > .sub-menu .sub-menu {
+        padding-left: 1.563rem;
+      }
+    }
+    .open > ul {
+      max-height: 51.25rem;
+      > li {
+          @include translate(0, 0);
+          @include translate3d(0,0,0);
+          @include opacity(1);
+          -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+        }
+
+        > li:first-child {
+          -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+        }
+
+        > li:nth-child(2) {
+          -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+        }
+
+        > li:nth-child(3) {
+          -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+        }
+
+        > li:nth-child(4) {
+          -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+        }
+
+        > li:nth-child(5) {
+          -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+        }
+
+        > li:nth-child(6) {
+          -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+        }
+
+        > li:nth-child(7) {
+          -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+        }
+
+        > li:nth-child(8) {
+          -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+        }
+
+        > li:nth-child(9) {
+          -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+        }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .sidebar-panel {
+    -webkit-backface-visibility: hidden;
+    width: $sidebar-width;
+    z-index: $zindex-sidebar-panel;
+    > nav {
+      > ul {
+        width: $sidebar-width;
+      }
+    }
+  }
+  /* Collapsed sidebar */
+
+  .layout-small-menu {
+    min-height: 100%;
+    .sidebar-panel {
+      width: $sidebar-small-menu-width;
+      overflow-x: visible!important;
+      overflow-y: visible!important;
+      .brand-logo,
+      .toggle-apps {
+        display: none;
+        visibility: hidden;
+        text-align: center;
+      }
+      .small-menu-visible {
+        display: block!important;
+        visibility: visible;
+      }
+      .toggle-sidebar {
+        text-align: center;
+        margin: 0 auto;
+        display: table;
+        float: none;
+      }
+      > nav {
+        overflow: visible!important;
+        right: 0;
+        > ul {
+          width: $sidebar-small-menu-width;
+        }
+        > ul > li {
+          position: relative;
+          text-align: center;
+          &.menu-accordion > a::before {
+            display: none;
+            visibility: hidden;
+          }
+          ul > li {
+            @include opacity(1);
+            @include translate(0, 0);
+            @include translate3d(0,0,0);
+          }
+          > a {
+            padding: 0.9375rem 0;
+          }
+          > a > span {
+            display: none;
+          }
+          > a > span.label {
+            display: block;
+            position: absolute;
+            top: 0.3125rem;
+            right: 0.3125rem;
+          }
+          > a > [class^="icon-"],
+          > a > [class*=" icon-"] {
+            display: block;
+            padding: 0;
+            width: 100%;
+          }
+          &:hover > .sub-menu {
+            max-height: 31.25rem;
+            @include box-shadow(0 0 0 0.0625rem rgba(0,0,0,.075), 0 0.0625rem 0.125rem rgba(0,0,0,.25));
+          }
+          > .sub-menu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            max-height: 0;
+            a {
+              padding-left: 0.9375rem;
+              white-space: nowrap;
+            }
+          }
+        }
+        .multi-level {
+          min-width: 11.25rem;
+        }
+        .multi-level a span {
+          margin-right: 1.563rem
+        }
+        .multi-level.menu-accordion > a::before {
+          display: none;
+          visibility: hidden;
+        }
+        .multi-level .sub-menu {
+          position: relative;
+          left: auto;
+          > li > a {
+            padding-left: 2.5rem;
+            .sub-menu {
+              padding-left: 2.813rem;
+            }
+          }
+        }
+      }
+    }
+    .main-panel {
+      margin-left: $sidebar-small-menu-width;
+    }
+    .fill-container {
+      left: $sidebar-small-menu-width;
+    }
+  }
+}
+
+/* default sidebar skin */
+@include sidebar-variant($sidebar-skin-background, $sidebar-skin-color, $sidebar-skin-hover, $sidebar-skin-brand-background, $sidebar-skin-brand-color, $sidebar-skin-accordion-color, $sidebar-skin-accordion-active);
+.sidebar-panel .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background-color: transparentize(white, 0.5);
+}

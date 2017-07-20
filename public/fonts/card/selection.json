@@ -1,0 +1,133 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"clear"
+				],
+				"defaultCode": 57456,
+				"grid": 24
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 47,
+				"id": 112,
+				"prevSize": 24,
+				"code": 57456,
+				"name": "remove",
+				"ligatures": "clear"
+			},
+			"setIdx": 0,
+			"setId": 11,
+			"iconIdx": 112
+		},
+		{
+			"icon": {
+				"paths": [
+					"M316 334l196 196 196-196 60 60-256 256-256-256z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"keyboard_arrow_down"
+				],
+				"defaultCode": 57615,
+				"grid": 24
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 50,
+				"id": 271,
+				"prevSize": 24,
+				"code": 57615,
+				"name": "collapse",
+				"ligatures": "keyboard_arrow_down"
+			},
+			"setIdx": 0,
+			"setId": 11,
+			"iconIdx": 271
+		},
+		{
+			"icon": {
+				"paths": [
+					"M754 270l100-100v300h-300l138-138q-76-76-180-76-106 0-181 75t-75 181 75 181 181 75q84 0 150-47t92-123h88q-28 112-120 184t-210 72q-140 0-240-100t-100-242 100-242 240-100q142 0 242 100z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"tags": [
+					"refresh"
+				],
+				"defaultCode": 57873,
+				"grid": 24
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 48,
+				"id": 529,
+				"prevSize": 24,
+				"code": 57873,
+				"name": "reload",
+				"ligatures": "refresh"
+			},
+			"setIdx": 0,
+			"setId": 11,
+			"iconIdx": 529
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "card-icon"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "card-",
+			"metadata": {
+				"fontFamily": "card-icon",
+				"majorVersion": 1,
+				"minorVersion": 0
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"showSelector": false,
+			"showMetrics": false,
+			"showMetadata": false,
+			"showVersion": false,
+			"embed": false
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215
+		},
+		"historySize": 100,
+		"showCodes": false,
+		"showLiga": false
+	}
+}

@@ -1,0 +1,61 @@
+/* $sweet-alert
+ ------------------------------------------*/
+
+.sweet-alert {
+  font-family: inherit;
+  @include rounded($border-radius-base);
+  /*Fix animation api conflict*/
+
+  visibility: visible!important;
+  h2 {
+    color: darken($text-color, 5%);
+  }
+  p {
+    color: $text-color;
+    font-weight: inherit;
+    font-size: $font-size-base;
+  }
+  button {
+    @include rounded($border-radius-base);
+    font-size: inherit;
+  }
+  .icon.error {
+    border-color: $brand-danger;
+  }
+  .sa-input-error::before,
+  .sa-input-error::after,
+  .sa-error-container .icon,
+  .icon.error .line {
+    background-color: $brand-danger;
+  }
+  .icon.warning {
+    border-color: $brand-warning;
+  }
+  .icon.warning .body {
+    background-color: $brand-warning;
+  }
+  .icon.warning .dot {
+    background-color: $brand-warning;
+  }
+  .icon.info {
+    border-color: $brand-info;
+  }
+  .icon.info::before {
+    background-color: $brand-info;
+  }
+  .icon.info::after {
+    background-color: $brand-info;
+  }
+  .icon.success {
+    border-color: $brand-success;
+  }
+  .icon.success .placeholder {
+    border-color: transparentize($brand-success, 0.8);
+  }
+  .icon.success .line {
+    background-color: $brand-success;
+  }
+  .sa-input-error {
+    top: 1.438rem;
+  }
+}

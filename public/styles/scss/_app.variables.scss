@@ -1,0 +1,79 @@
+//
+// General
+//
+
+$transition-duration:  150ms;
+$body-bg:                       #f5f5f5;
+$main-panel-bg:                 #f0f0f0;
+$border-color:                  #e4e4e4;
+$gutter: 0.75rem;
+
+//
+// Widths
+//
+
+$sidebar-width:                  12.5rem;
+$sidebar-small-menu-width:       4.375rem;
+$sidebar-width-sm:               12.5rem;
+
+//
+// Heights
+//
+
+$header-height: 3.438rem;
+$footer-height: 2.5rem;
+
+//
+// Branding
+//
+
+$brand-default:                 #e2e2e2;
+$brand-primary:                 #6164C1;
+$brand-success:                 #6FC080;
+$brand-warning:                 #F2B776;
+$brand-danger:                  #DD6777;
+$brand-info:                    #6EC7E6;
+$brand-white:                   white;
+$brand-dark:                    #44425B;
+
+//
+// Typography
+//
+
+$font-size-base:                0.8125rem;
+$font-weight-base:              400;
+$font-weight-medium:            500;
+$font-weight-bold:              700;
+$text-color:                    #59595A;
+$link-color:                    #59595A;
+$link-hover-color:              #444;
+$font-family-base-webfont:      Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font-family-heading-webfont:   "Montserrat", Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+//
+// Radius
+//
+
+$border-radius-base:            0;
+$border-radius-large:           0;
+$border-radius-small:           0;
+
+//
+// Sidebar Skin
+//
+
+$sidebar-skin-background:        #fff;
+$sidebar-skin-color:             #59595A;
+$sidebar-skin-hover:             #000;
+$sidebar-skin-brand-background:  $sidebar-skin-background;
+$sidebar-skin-brand-color:       #59595A;
+$sidebar-skin-accordion-color:   rgba(0, 0, 0, 0.2);
+$sidebar-skin-accordion-active:  #6164C1;
+//
+// Header Skin
+//
+
+$header-skin-background:        #6164C1;
+$header-skin-hover-background:  #6164C1;
+$header-skin-color:             #FFF;
+$header-skin-hover:             #fff;

@@ -1,0 +1,89 @@
+/* $colors
+ ------------------------------------------*/
+@mixin shades($name, $background) {
+  @include bg-variant('.bg-#{$name}', $background);
+  
+  @include bg-variant('.bg-#{$name}-dark', darken($background, 5%));
+  
+  @include bg-variant('.bg-#{$name}-darker', darken($background, 10%));
+
+  @include bg-variant('.bg-#{$name}-light', lighten($background, 5%));
+
+  @include bg-variant('.bg-#{$name}-lighter', lighten($background, 10%));
+}
+
+/* Color Variant: Primary */
+@include shades(primary,$brand-primary);
+
+/* Color Variant: Default */
+@include shades(default,$brand-default);
+
+/* Color Variant: Warning */
+@include shades(warning,$brand-warning);
+
+/* Color Variant: Success */
+@include shades(success,$brand-success);
+
+/* Color Variant: Info */
+@include shades(info,$brand-info);
+
+/* Color Variant: Danger */
+@include shades(danger,$brand-danger);
+
+/* Color Variant: White */
+@include shades(white, white);
+
+/* Color Variant: Dark */
+@include shades(dark,$brand-dark);
+
+/* Extra palette colors */
+@include shades(red,#F44336);
+@include shades(pink,#E91E63);
+@include shades(purple,#9C27B0);
+@include shades(deeppurple,#673AB7);
+@include shades(indigo,#3F51B5);
+@include shades(blue,#2196F3);
+@include shades(lightblue,#03A9F4);
+@include shades(cyan,#00BCD4);
+@include shades(teal,#009688);
+@include shades(green,#4CAF50);
+@include shades(lightgreen,#74D108);
+@include shades(lime,#CDDC39);
+@include shades(yellow,#FFEB3B);
+@include shades(amber,#FFC107);
+@include shades(orange,#FF9800);
+@include shades(deeporange,#FF5722);
+@include shades(brown,#795548);
+@include shades(grey,#9E9E9E);
+@include shades(bluegrey,#607D8B);
+
+/* $TextColor */
+@include text-emphasis-variant('.text-primary', $brand-primary);
+@include text-emphasis-variant('.text-default', $brand-default);
+@include text-emphasis-variant('.text-warning', $brand-warning);
+@include text-emphasis-variant('.text-success', $brand-success);
+@include text-emphasis-variant('.text-info', $brand-info);
+@include text-emphasis-variant('.text-white', $brand-white);
+@include text-emphasis-variant('.text-danger', $brand-danger);
+@include text-emphasis-variant('.text-muted', darken(#fff, 30%));
+@include text-emphasis-variant('.text-color', $text-color);
+/* Extra text colors */
+@include text-emphasis-variant('.text-red', #F44336);
+@include text-emphasis-variant('.text-pink', #E91E63);
+@include text-emphasis-variant('.text-purple', #9C27B0);
+@include text-emphasis-variant('.text-deeppurple', #673AB7);
+@include text-emphasis-variant('.text-indigo', #3F51B5);
+@include text-emphasis-variant('.text-blue', #2196F3);
+@include text-emphasis-variant('.text-lightblue', #03A9F4);
+@include text-emphasis-variant('.text-cyan', #00BCD4);
+@include text-emphasis-variant('.text-teal', #009688);
+@include text-emphasis-variant('.text-green', #4CAF50);
+@include text-emphasis-variant('.text-lightgreen', #74D108);
+@include text-emphasis-variant('.text-lime', #CDDC39);
+@include text-emphasis-variant('.text-yellow', #FFEB3B);
+@include text-emphasis-variant('.text-amber', #FFC107);
+@include text-emphasis-variant('.text-orange', #FF9800);
+@include text-emphasis-variant('.text-deeporange', #FF5722);
+@include text-emphasis-variant('.text-brown', #795548);
+@include text-emphasis-variant('.text-grey', #9E9E9E);
+@include text-emphasis-variant('.text-bluegrey', #607D8B);

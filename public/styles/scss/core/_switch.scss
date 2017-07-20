@@ -1,0 +1,104 @@
+/* $switch
+ ------------------------------------------*/
+@mixin switch-variant($color) {
+  :checked + span {
+    background-color: transparentize($color, 0.4);
+    i:before {
+      background-color: $color;
+    }
+  }
+}
+.switch {
+  position: relative;
+  display: block;
+  padding: 0.3125rem 0;
+  height: 1.875rem;
+  span {
+    width: 3.125rem;
+    height: 1.25rem;
+    @include transition(background-color $transition-duration);
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    background-color: $border-color;
+    background-clip: content-box;
+    vertical-align: middle;
+    cursor: pointer;
+    @include rounded(1.25rem);
+    @include user-select(none);
+  }
+  input {
+    display: none;
+  }
+  span i {
+    position: absolute;
+    top: -0.3125rem;
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 1.25rem;
+    @include transition(all ease 0.2s);
+  }
+  span i::before {
+    display: block;
+    content: '';
+    @include square(1.875rem);
+    @include rounded(100%);
+    background: white;
+    @include box-shadow(0 0 0 0.0625rem rgba(0, 0, 0, 0.075), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.25));
+  }
+  :disabled + span i::before {
+    background-color: rgba(239, 239, 239, 1);
+  }
+  :checked + span {
+    @include transition(background-color $transition-duration);
+    i {
+      padding-right: 0;
+      padding-left: 1.313rem;
+    }
+  }
+
+  @include switch-variant($brand-success);
+
+  /* sizes. */
+  &.switch-sm {
+    @include rounded(1.25rem);
+    span {
+      width: 2.063rem;
+      height: 0.625rem;
+    }
+    span i::before {
+      @include square(1.25rem);
+    }
+    :checked + span i {
+      padding-left: 0.875rem;
+    }
+  }
+  &.switch-lg {
+    @include rounded(2.5rem);
+    span {
+      width: 4.125rem;
+      height: 1.875rem;
+    }
+    span i::before {
+      @include square(2.5rem);
+    }
+    :checked + span i {
+      padding-left: 1.688rem;
+    }
+  }
+  &.switch-primary {
+    @include switch-variant($brand-primary);
+  }
+  &.switch-warning {
+    @include switch-variant($brand-warning);
+  }
+  &.switch-danger {
+    @include switch-variant($brand-danger);
+  }
+  &.switch-info {
+    @include switch-variant($brand-info);
+  }
+  &.switch-dark {
+    @include switch-variant($brand-dark);
+  }
+}
